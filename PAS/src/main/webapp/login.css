@@ -1,0 +1,30 @@
+@media (max-width:575px) {
+
+    label{
+
+        font-size: medium;
+        font-weight: bold;
+        text-align: left;
+
+    }
+    
+}
+
+@media (min-width:576px) {
+
+    label{
+
+        font-size: medium;
+        font-weight: bolder;
+        text-align: right;
+    
+    }
+    
+}
+
+a{
+
+    text-decoration: none;
+    color: rgb(5, 6, 68);
+
+}
