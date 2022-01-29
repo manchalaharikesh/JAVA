@@ -21,60 +21,64 @@
 		<br>
 		<br>
 
-		<div class="row row-cols-1 row-cols-md-3 mt-5 mb-5 d-flex justify-content-around">
+		<form id="home-form" method="post">
 
-			<!--card-1-->
-
-			<div class="col-sm-12 col-12 mb-3">
-				<div class="card rounded border border-dark"
-					style="max-height: fit-content;">
-
-					<img class="image-fluid rounded" src="https://tinyurl.com/55pz4xzz" alt="This image is removed">
-					<div class="card-body">
-						<h3>Resume</h3>
-					</div>
-					<div class="card-footer">
-						<a href="resume.jsp"><button class="btn btn-primary">My Resume</button></a>
+			<div class="row row-cols-1 row-cols-md-3 mt-5 mb-5 d-flex justify-content-around">
+	
+				<!--card-1-->
+	
+				<div class="col-sm-12 col-12 mb-3">
+					<div class="card rounded border border-dark"
+						style="max-height: fit-content;">
+	
+						<img class="image-fluid rounded" src="https://tinyurl.com/55pz4xzz" alt="This image is removed">
+						<div class="card-body">
+							<h3>Resume</h3>
+						</div>
+						<div class="card-footer">
+							<button class="btn btn-primary" formaction="ResumePage" form="home-form">My Resume</button>
+						</div>
 					</div>
 				</div>
+				
+				<!--card-2-->
+	
+				<div class="col-sm-12 col-12 mb-3">
+					<div class="card rounded border border-dark" style="max-height: fit-content;">
+	
+						<img class="image-fluid rounded" src="https://tinyurl.com/ch4jdtta" alt="This image is removed">
+						<div class="card-body">
+							<h3>Curriculum Vitae</h3>
+						</div>
+						<div class="card-footer">
+							<a href="cv.jsp"><button class="btn btn-primary">My CV</button></a>
+						</div>
+					</div>
+				</div>
+	
 			</div>
 			
-			<!--card-2-->
-
-			<div class="col-sm-12 col-12 mb-3">
-				<div class="card rounded border border-dark" style="max-height: fit-content;">
-
-					<img class="image-fluid rounded" src="https://tinyurl.com/ch4jdtta" alt="This image is removed">
-					<div class="card-body">
-						<h3>Curriculum Vitae</h3>
-					</div>
-					<div class="card-footer">
-						<a href="cv.jsp"><button class="btn btn-primary">My CV</button></a>
+			<div class="row row-cols-1 row-cols-md-3 mt-5 mb-5 d-flex justify-content-center">
+	
+				<!--card-1-->
+	
+				<div class="col-sm-12 col-12 mb-3">
+					<div class="card rounded border border-dark"
+						style="max-height: fit-content;">
+	
+						<img class="image-fluid rounded" src="https://tinyurl.com/2p8a5n9e" alt="This image is removed">
+						<div class="card-body">
+							<h3>Apply for Job</h3>
+						</div>
+						<div class="card-footer">
+							<a href="job.jsp"><button class="btn btn-primary">Apply</button></a>
+						</div>
 					</div>
 				</div>
+	
 			</div>
-
-		</div>
 		
-		<div class="row row-cols-1 row-cols-md-3 mt-5 mb-5 d-flex justify-content-center">
-
-			<!--card-1-->
-
-			<div class="col-sm-12 col-12 mb-3">
-				<div class="card rounded border border-dark"
-					style="max-height: fit-content;">
-
-					<img class="image-fluid rounded" src="https://tinyurl.com/2p8a5n9e" alt="This image is removed">
-					<div class="card-body">
-						<h3>Apply for Job</h3>
-					</div>
-					<div class="card-footer">
-						<a href="job.jsp"><button class="btn btn-primary">Apply</button></a>
-					</div>
-				</div>
-			</div>
-
-		</div>
+		</form>
 			
 	</div>
         

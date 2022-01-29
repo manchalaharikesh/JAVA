@@ -22,7 +22,8 @@ public class LoginServlet extends HttpServlet{
 
         if(login_status){
 
-            request.setAttribute("username", username);
+        	request.getSession().setAttribute("currentuser", username);
+        	request.setAttribute("username", username);
             RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
             rd.forward(request, response);       
             

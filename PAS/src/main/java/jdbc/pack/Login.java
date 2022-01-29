@@ -26,8 +26,14 @@ public class Login {
 
                 if(rs.getString(6).equals(username)){
 
-                    if(rs.getString(7).equals(password))
-                        return true;
+                    if(rs.getString(7).equals(password)) {
+                    	
+//                    	String insert_current_user = "insert into currentuser value('"+username+"')";
+//                    	stmt.execute(insert_current_user);
+                    	return true;
+                    	
+                    }
+                       
 
                     else
                         return false;

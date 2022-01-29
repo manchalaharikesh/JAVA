@@ -25,4 +25,40 @@
     <url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>ResumePage</servlet-name>
+    <servlet-class>jdbc.pack.ResumeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResumePage</servlet-name>
+    <url-pattern>/ResumePage</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>EditResumePage</servlet-name>
+    <servlet-class>jdbc.pack.ResumeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditResumePage</servlet-name>
+    <url-pattern>/EditResumePage</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>SaveEditResumePage</servlet-name>
+    <servlet-class>jdbc.pack.ResumeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SaveEditResumePage</servlet-name>
+    <url-pattern>/SaveEditResumePage</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>CancelEditResumePage</servlet-name>
+    <servlet-class>jdbc.pack.ResumeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CancelEditResumePage</servlet-name>
+    <url-pattern>/CancelEditResumePage</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
