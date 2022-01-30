@@ -40,61 +40,80 @@
 
 		<br> <br>
 
-		<form class="w-50 m-4 shadow p-4 mx-auto" id="resume-form" enctype="multipart/form-data" method="post">
-			<h3 class="p-2 bg-primary rounded">Personal Details</h3>
-			<div class="mb-3">
-				<div class="w-50 float-start p-2">
-					<label for="fname" class="form-label">First Name</label> 
-					<input type="text" class="form-control" name="firstname" id="fname"
-					value="<c:if test="${not empty firstname}">${firstname}</c:if>" disabled>
+		<form class="w-75 m-4 shadow p-4 mx-auto" id="resume-form" enctype="multipart/form-data" method="post">
+			
+			<div class="row">
+				<h3 class="p-2 bg-primary rounded">Personal Details</h3>
+				<div class="col-6">
+					<div class="row">
+						<div class="col-12 mb-3">
+							<div class="w-100 float-start p-2">
+								<label for="fname" class="form-label">First Name</label> 
+								<input type="text" class="form-control" name="firstname" id="fname"
+								value="<c:if test="${not empty firstname}">${firstname}</c:if>" disabled>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 mb-3">
+							<div class="w-100 float-start p-2">
+								<label for="lname" class="form-label">Last Name</label> <input
+								type="text" class="form-control" name="lastname" id="lastname"
+								value="<c:if test="${not empty lastname}">${lastname}</c:if>" disabled />
+							</div>
+						</div>		
+					</div>		
+					<div class="row">
+						<div class="col-12 mb-3">
+							<div class="w-100 float-start p-2">
+								<label for="email" class="form-label"><i
+								class="fa fa-envelope" aria-hidden="true"></i> Email</label> <input
+								type="email" class="form-control" name="mail" id="email"
+								value="<c:if test="${not empty mail}">${mail}</c:if>" disabled />
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 mb-3">
+							<div class="w-100 float-start p-2">
+								<label for="phno" class="form-label"><i class="fa fa-phone"
+								aria-hidden="true"></i> Contact</label> <input type="text"
+								class="form-control" name="phone" id="phno"
+								value="<c:if test="${not empty phone}">${phone}</c:if>" disabled />
+							</div>
+						</div>
+					</div>	
 				</div>
-				<div class="w-50 float-end p-2">
-					<label for="lname" class="form-label">Last Name</label> <input
-						type="text" class="form-control" name="lastname" id="lastname"
-						value="<c:if test="${not empty lastname}">${lastname}</c:if>" disabled />
-				</div>
+				
+				<!-- Profile Picture -->
+				
+				<div class="col-4 mx-auto my-auto">
+					<img class="rounded-circle " src="data:image/jpg;base64,${avatar}" width="300px" height="300px" />
+				</div>	
+				
 			</div>
-			<div class="mb-3">
-				<div class="w-50 float-start p-2">
-					<label for="email" class="form-label"><i
-						class="fa fa-envelope" aria-hidden="true"></i> Email</label> <input
-						type="email" class="form-control" name="mail" id="email"
-						value="<c:if test="${not empty mail}">${mail}</c:if>" disabled />
-				</div>
-				<div class="w-50 float-end p-2">
-					<label for="phno" class="form-label"><i class="fa fa-phone"
-						aria-hidden="true"></i> Contact</label> <input type="text"
-						class="form-control" name="phone" id="phno"
-						value="<c:if test="${not empty phone}">${phone}</c:if>" disabled />
-				</div>
-			</div>
-			<div class="mb-3">
-				<div class="w-50 float-start p-2">
-					<label for="year" class="form-label">Year</label> <select
-						class="form-select" aria-label="Default select example" id="year"
-						name="year" disabled>
-						<option value="0"<c:if test="${empty year}">selected</c:if>">Current
-							year</option>
-						<option value="1" <c:if test="${year==1}">selected</c:if>>1st
-							year</option>
-						<option value="2" <c:if test="${year==2}">selected</c:if>>2nd
-							year</option>
-						<option value="3" <c:if test="${year==3}">selected</c:if>>3rd
-							year</option>
-						<option value="4" <c:if test="${year==4}">selected</c:if>>4th
-							year</option>
-					</select>
-				</div>
-				<div class="w-50 float-end p-2">
-					<label for="branch" class="form-label">Branch</label> <input
-						type="text" class="form-control" name="branch" id="branch"
+			<div class="row">
+				<div class="col-6 mb-3">
+					<div class="w-100 p-2">
+						<label for="year" class="form-label">Year</label> 
+							<select class="form-select" aria-label="Default select example" id="year" name="year" disabled>
+								<option value="0"<c:if test="${empty year}">selected</c:if>">Current year</option>
+								<option value="1" <c:if test="${year==1}">selected</c:if>>1st year</option>
+								<option value="2" <c:if test="${year==2}">selected</c:if>>2nd year</option>
+								<option value="3" <c:if test="${year==3}">selected</c:if>>3rd year</option>
+								<option value="4" <c:if test="${year==4}">selected</c:if>>4th year</option>
+							</select>
+						</div>
+					</div>
+					<div class="col-6 mb-3">
+					<div class="w-100 p-2">
+						<label for="branch" class="form-label">Branch</label> 
+						<input type="text" class="form-control" name="branch" id="branch"
 						value="<c:if test="${not empty branch}">${branch}</c:if>" disabled/>
+					</div>
 				</div>
 			</div>
-			<div class="p-2 w-50">
-				<label for="avatar" class="form-label">Upload image file</label> <input
-					type="file" name="avatar" id="avatar" class="form-control" disabled />
-			</div>
+				
 			<hr>
 			<h3 class="p-2 bg-success rounded">Academic Details</h3>
 			<div class="mb-3">

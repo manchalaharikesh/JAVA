@@ -5,9 +5,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
-import java.io.OutputStream;
 import java.sql.Statement;
+import java.util.Base64;
+import java.sql.Blob;
 
 public class Resume {
 	
@@ -26,6 +28,9 @@ public class Resume {
 	public String interests="";
 	public String hk="", cc="";
 	public String linkedin="", github="";
+	public Blob blobAvatar=null;
+	public byte[] byteAvatar=null;
+	public String base64Image=null;
 	
 	public static Connection getConnection() {
 		
@@ -34,7 +39,6 @@ public class Resume {
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pasdb", "root", "harikesh");
 		} catch (SQLException | ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -542,8 +546,7 @@ public class Resume {
 		try {
 			
 			con = getConnection();
-			Statement stmt = con.createStatement();
-			String fetch_user_data = "select firstname, lastname, phone, year, branch, mail from PROFILE where username= ?";
+			String fetch_user_data = "select firstname, lastname, phone, year, branch, mail, photo from PROFILE where username= ?";
 			
 			PreparedStatement prstmt = con.prepareStatement(fetch_user_data);
 			prstmt.setString(1, username);
@@ -558,6 +561,25 @@ public class Resume {
 				resumeObj.year = rs.getInt("year");
 				resumeObj.branch = rs.getString("branch");
 				resumeObj.mail = rs.getString("mail");
+				resumeObj.blobAvatar = rs.getBlob("photo");
+				
+				InputStream is = resumeObj.blobAvatar.getBinaryStream();
+				ByteArrayOutputStream os = new ByteArrayOutputStream();
+				
+				byte[] buffer = new byte[4096];
+				int bytesRead = -1;
+				
+				while((bytesRead = is.read(buffer))!=-1) {
+					
+					os.write(buffer, 0, bytesRead);
+					
+				}
+				
+				resumeObj.byteAvatar = os.toByteArray();
+				resumeObj.base64Image = Base64.getEncoder().encodeToString(resumeObj.byteAvatar);
+				
+				is.close();
+				os.close();
 				
 			}
 			
@@ -591,7 +613,6 @@ public class Resume {
 		try {
 			
 			con = getConnection();
-			Statement stmt = con.createStatement();
 			String fetch_user_data = "select school, tenth, college, twelfth, institute, btech from academics where username= ?";
 			
 			PreparedStatement prstmt = con.prepareStatement(fetch_user_data);
@@ -640,7 +661,6 @@ public class Resume {
 		try {
 			
 			con = getConnection();
-			Statement stmt = con.createStatement();
 			String fetch_user_data = "select project1, project2, project3, achievement1, achievement2, achievement3, workexp from pawi where username= ?";
 			
 			PreparedStatement prstmt = con.prepareStatement(fetch_user_data);
@@ -690,7 +710,6 @@ public class Resume {
 		try {
 			
 			con = getConnection();
-			Statement stmt = con.createStatement();
 			String fetch_user_data = "select ai, cpp, react, ml, java, angular, hacking, python, flutter, interests from tech where username= ?";
 			
 			PreparedStatement prstmt = con.prepareStatement(fetch_user_data);
@@ -743,7 +762,6 @@ public class Resume {
 		try {
 			
 			con = getConnection();
-			Statement stmt = con.createStatement();
 			String fetch_user_data = "select hackerrank, codechef, linkedin, github from socialplatforms where username= ?";
 			
 			PreparedStatement prstmt = con.prepareStatement(fetch_user_data);

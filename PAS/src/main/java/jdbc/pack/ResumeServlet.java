@@ -1,9 +1,8 @@
 package jdbc.pack;
 
 import java.io.IOException;
-import java.io.InputStream;
-
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,9 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import javax.servlet.RequestDispatcher;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.PrintWriter;
 
 /**
  * Servlet implementation class ResumeServlet
@@ -63,6 +59,8 @@ public class ResumeServlet extends HttpServlet {
 	
 	public void getResumePage(HttpServletRequest request, HttpServletResponse response) {
 		
+		ServletOutputStream avatarImg = null;
+		
 		Resume resume = new Resume();
 		Resume resumeObj = resume.getData(username);
 		request.setAttribute("resumeObj", resumeObj);
@@ -75,6 +73,7 @@ public class ResumeServlet extends HttpServlet {
 			request.setAttribute("year", resumeObj.year);
 			request.setAttribute("branch", resumeObj.branch);
 			request.setAttribute("mail", resumeObj.mail);
+			request.setAttribute("avatar", resumeObj.base64Image);
 			
 			request.setAttribute("school", resumeObj.school);
 			request.setAttribute("tenth", resumeObj.tenth);
@@ -112,7 +111,17 @@ public class ResumeServlet extends HttpServlet {
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/resume.jsp");
 		try {
+			
 			rd.forward(request, response);
+			
+//			avatarImg = response.getOutputStream();
+//			avatarImg.write(resumeObj.byteAvatar);
+//			
+//			avatarImg.flush();
+//			avatarImg.close();
+//			
+//			response.setContentType("image/text");
+			
 		} catch (ServletException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
