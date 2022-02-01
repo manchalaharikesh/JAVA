@@ -39,7 +39,12 @@
                     <label class="form-text">Enter your 8-digit password</label>
                 </div>
             </div>
-
+            
+            <!-- Switch user -->
+			<div class="form-check form-switch mb-3">
+				<input class="form-check-input border border-danger" name="switch" type="checkbox" />
+				<label>Push Tab for Admin Login</label>
+			</div>
 
             <div class="row">
                 <a href="#" target="_blank" class="col-4 col-sm-4">Forgot Password?</a>
