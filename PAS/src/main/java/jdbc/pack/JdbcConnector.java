@@ -10,7 +10,7 @@ public class JdbcConnector {
         try{
 
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pasdb", "root", "harikesh");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pasdb", "root", "rama123na");
             return con;
 
         }
