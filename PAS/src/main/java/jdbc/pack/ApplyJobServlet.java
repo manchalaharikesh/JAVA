@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/ApplyJobServlet")
 @MultipartConfig
+
 public class ApplyJobServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
