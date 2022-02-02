@@ -61,13 +61,4 @@
     <url-pattern>/CancelEditResumePage</url-pattern>
   </servlet-mapping>
   
-  <servlet>
-  	<servlet-name>ApplyJobServlet</servlet-name>
-    <servlet-class>jdbc.pack.ApplyJobServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ApplyJobServlet</servlet-name>
-    <url-pattern>/ApplyJob</url-pattern>
-  </servlet-mapping>
-  
 </web-app>
