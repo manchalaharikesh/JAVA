@@ -45,6 +45,14 @@ public class ResumeServlet extends HttpServlet {
 				cancelEditResumePage(request, response);
 				break;
 		
+			case "/ApplicantResumePage":
+				getApplicantResumePage(request, response);
+				break;
+				
+			case "/ScheduleResumePage":
+				getApplicantResumePage(request, response);
+				break;
+				
 		}
 		
 	}
@@ -58,8 +66,6 @@ public class ResumeServlet extends HttpServlet {
 	}
 	
 	public void getResumePage(HttpServletRequest request, HttpServletResponse response) {
-		
-		ServletOutputStream avatarImg = null;
 		
 		Resume resume = new Resume();
 		Resume resumeObj = resume.getData(username);
@@ -277,6 +283,76 @@ public class ResumeServlet extends HttpServlet {
 			}
 		
 		}
+			
+	}
+	
+	public void getApplicantResumePage(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
+		String uname = request.getParameter("username");
+		
+		Resume resume = new Resume();
+		Resume resumeObj = resume.getData(uname);
+		request.setAttribute("resumeObj", resumeObj);
+		
+		if(resumeObj!=null) {
+			
+			request.setAttribute("action", (String) request.getServletPath());		
+			request.setAttribute("username", uname);
+			request.setAttribute("firstname", resumeObj.firstname);
+			request.setAttribute("lastname", resumeObj.lastname);
+			request.setAttribute("phone", resumeObj.phone);
+			request.setAttribute("year", resumeObj.year);
+			request.setAttribute("branch", resumeObj.branch);
+			request.setAttribute("mail", resumeObj.mail);
+			request.setAttribute("avatar", resumeObj.base64Image);
+			
+			request.setAttribute("school", resumeObj.school);
+			request.setAttribute("tenth", resumeObj.tenth);
+			request.setAttribute("college", resumeObj.college);
+			request.setAttribute("twelfth", resumeObj.twelfth);
+			request.setAttribute("institute", resumeObj.institute);
+			request.setAttribute("btech", resumeObj.btech);
+			
+			request.setAttribute("project1", resumeObj.project1);
+			request.setAttribute("project2", resumeObj.project2);
+			request.setAttribute("project3", resumeObj.project3);
+			request.setAttribute("achievement1", resumeObj.achievement1);
+			request.setAttribute("achievement2", resumeObj.achievement2);
+			request.setAttribute("achievement3", resumeObj.achievement3);
+			request.setAttribute("workexp", resumeObj.workexp);
+			
+			request.setAttribute("ai", resumeObj.ai);
+			request.setAttribute("cpp", resumeObj.cpp);
+			request.setAttribute("react", resumeObj.react);
+			request.setAttribute("ml", resumeObj.ml);
+			request.setAttribute("java", resumeObj.java);
+			request.setAttribute("angular", resumeObj.angular);
+			request.setAttribute("hacking", resumeObj.hacking);
+			request.setAttribute("python", resumeObj.python);
+			request.setAttribute("flutter", resumeObj.flutter);
+			request.setAttribute("interests", resumeObj.interests);
+			
+			request.setAttribute("hk", resumeObj.hk);
+			request.setAttribute("cc", resumeObj.cc);
+			request.setAttribute("linkedin", resumeObj.linkedin);
+			request.setAttribute("github", resumeObj.github);
+			
+			
+		}
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/applicant_resume.jsp");
+		try {
+			
+			rd.forward(request, response);
+			
+		} catch (ServletException e) {
+			
+			e.printStackTrace();
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		
 		
 		
 	}

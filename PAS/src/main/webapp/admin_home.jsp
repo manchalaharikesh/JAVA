@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title><%=request.getAttribute("company") %></title>
+	<title><%=request.getSession().getAttribute("company") %></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
@@ -31,48 +31,49 @@
 		
 			<div class="title bg-dark text-info mt-5 p-2">
             
-            	<h3 class="text-center"><%=request.getAttribute("company")%></h3>
+            	<h3 class="text-center"><%=request.getSession().getAttribute("company")%></h3>
      
         	</div>
         	
-        	<div class="row justify-content-around mt-5">
-        	
-        		<div class="col-4">
-        		
-        			<div class="card shadow shadow-5 rounded">
-        				<div class="card-layout">
-        					<div class="card-body">
-        						<img class="w-100" src="https://i.pinimg.com/originals/83/42/0b/83420bb5f95923f8c13028a5053f4908.gif" alt="" />
-        						<h3>View Applications</h3>
-        					</div>
-        					<div class="card-footer">
-        						
-        						<button class="btn btn-warning">View</button>
-        					
-        					</div>
-        				</div>
-        			</div>
-        		
-        		</div>
-        		
-        		<div class="col-4">
-        		
-        			<div class="card shadow shadow-5 rounded">
-        				<div class="card-layout">
-        					<div class="card-body">
-        						<img class="w-100" src="https://cdn.dribbble.com/users/1732368/screenshots/6761107/interview.gif" alt="" />
-        						<h3>Schedule Interviews</h3>
-        					</div>
-        					<div class="card-footer">
-        						<button class="btn btn-warning">Schedule</button>
-        					</div>
-        				</div>
-        			</div>
-        		
-        		</div>
-        	
-        	
-        	</div>
+        	<form class="form" method="post" id="admin-home">
+	        	<div class="row justify-content-around mt-5">
+	        	
+	        		<div class="col-4">
+	        		
+	        			<div class="card shadow shadow-5 rounded">
+	        				<div class="card-layout">
+	        					<div class="card-body">
+	        						<img class="w-100" src="https://i.pinimg.com/originals/83/42/0b/83420bb5f95923f8c13028a5053f4908.gif" alt="" />
+	        						<h3>View Applications</h3>
+	        					</div>
+	        					<div class="card-footer">
+	        						
+	        						<button class="btn btn-warning" type="submit" formaction="ApplicantsPage" id="admin-home">View</button>
+	        					
+	        					</div>
+	        				</div>
+	        			</div>
+	        		
+	        		</div>
+	        		
+	        		<div class="col-4">
+	        		
+	        			<div class="card shadow shadow-5 rounded">
+	        				<div class="card-layout">
+	        					<div class="card-body">
+	        						<img class="w-100" src="https://cdn.dribbble.com/users/1732368/screenshots/6761107/interview.gif" alt="" />
+	        						<h3>Schedule Interviews</h3>
+	        					</div>
+	        					<div class="card-footer">
+	        						<button class="btn btn-warning" formaction="ScheduleInterview" id="admin-home">Schedule</button>
+	        					</div>
+	        				</div>
+	        			</div>
+	        		
+	        		</div>
+	        	
+	        	</div>
+			</form>
 		
 		</div>	
 

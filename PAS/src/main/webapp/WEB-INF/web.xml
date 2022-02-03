@@ -60,7 +60,7 @@
     <servlet-name>CancelEditResumePage</servlet-name>
     <url-pattern>/CancelEditResumePage</url-pattern>
   </servlet-mapping>
-   <servlet>
+  <servlet>
   	<servlet-name>ApplyJobServlet</servlet-name>
     <servlet-class>jdbc.pack.ApplyJobServlet</servlet-class>
   </servlet>
@@ -68,4 +68,58 @@
     <servlet-name>ApplyJobServlet</servlet-name>
     <url-pattern>/ApplyJob</url-pattern>
   </servlet-mapping>
+    <servlet>
+  	<servlet-name>ApplicantsPage</servlet-name>
+    <servlet-class>jdbc.pack.ApplicantsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ApplicantsPage</servlet-name>
+    <url-pattern>/ApplicantsPage</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ApplicantResumePage</servlet-name>
+    <servlet-class>jdbc.pack.ResumeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ApplicantResumePage</servlet-name>
+    <url-pattern>/ApplicantResumePage</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>RejectApplicant</servlet-name>
+    <servlet-class>jdbc.pack.ApplicantsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RejectApplicant</servlet-name>
+    <url-pattern>/RejectApplicant</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ShortlistApplicant</servlet-name>
+    <servlet-class>jdbc.pack.ApplicantsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShortlistApplicant</servlet-name>
+    <url-pattern>/ShortlistApplicant</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ScheduleInterview</servlet-name>
+    <servlet-class>jdbc.pack.ApplicantsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ScheduleInterview</servlet-name>
+    <url-pattern>/ScheduleInterview</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>ScheduleResumePage</servlet-name>
+    <servlet-class>jdbc.pack.ResumeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ScheduleResumePage</servlet-name>
+    <url-pattern>/ScheduleResumePage</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

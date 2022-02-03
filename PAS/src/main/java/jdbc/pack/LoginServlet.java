@@ -48,8 +48,7 @@ public class LoginServlet extends HttpServlet{
         	
         	if(login_status) {
         		
-        		request.getSession().setAttribute("currentuser", username);
-	        	request.setAttribute("company", loginObj.company);
+        		request.getSession().setAttribute("company", loginObj.company);
 	        	request.setAttribute("logo", loginObj.base64Image);
 	            RequestDispatcher rd = request.getRequestDispatcher("/admin_home.jsp");
 	            rd.forward(request, response);    

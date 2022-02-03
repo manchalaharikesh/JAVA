@@ -13,7 +13,7 @@ public class ApplyJob {
 		ArrayList<String> companies = new ArrayList<String>();
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		try {
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pasdb", "root", "rama123na");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pasdb", "root", "harikesh");
 			Statement stmt = con.createStatement();
 			String sql1 = "select btech from academics where username = '" + uname + "'";
 			float userCGPA = 0;

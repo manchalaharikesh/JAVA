@@ -25,7 +25,7 @@ public class Login {
         try{
 
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pasdb", "root", "rama123na");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/pasdb", "root", "harikesh");
             Statement stmt = con.createStatement();
             String login_check = "select * from REGISTRATION";
             ResultSet rs = stmt.executeQuery(login_check);
